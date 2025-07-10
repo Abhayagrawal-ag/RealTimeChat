@@ -317,11 +317,18 @@ const io = new Server(server, {
 });
 
 // CORS allow frontend origin
+// app.use(cors({
+//   origin: 'http://localhost:5173',
+//   methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
+//   credentials:true
+// }));
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://realtimechat-frontend-w7kh.onrender.com',
   methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'],
   credentials:true
 }));
+
+
 
 app.use(express.json()); // to parse JSON from frontend
 app.use('/api/auth', authRoutes) // login/signup
